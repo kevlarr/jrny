@@ -25,7 +25,13 @@ fn main() {
         (@subcommand on =>
             (about: "Reviews and applies the available revisions")
             (@arg config: -c --config [FILE] +takes_value "Sets a custom config file")
-            (@arg commit: --commit !takes_value "Commits the transaction, false by default to encourage dry runs")
+            (@arg commit: --commit !takes_value "Commits the transaction, false by default")
+        )
+
+        (@subcommand anew =>
+            (about: "Archives database revision records and removes associated files")
+            (@arg config: -c --config [FILE] +takes_value "Sets a custom config file")
+            (@arg commit: --commit !takes_value "Commits the transaction, false by default")
         )
     };
 
